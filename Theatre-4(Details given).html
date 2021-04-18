@@ -59,6 +59,73 @@
             }
           
     </style>
+     <script>
+      function MakePayment()
+      {
+        if(emailValidate()&&mobValidate()&&otpValidate()){
+          return true;
+        }
+          else{
+            return false;
+          }
+      }
+      function emailValidate()
+        {
+        var email;
+        email=document.getElementById("emailid").value;
+        var reg=/^([a-zA-Z0-9_\-\.])+\@([a-zA-Z0-9_\-\.])+\.([a-zA-Z]{2,4})$/;
+  
+        if(reg.test(emailid.value) == false){
+          document.getElementById("emailerror").innerHTML="Its not a valid email :"+email;
+          document.getElementById("emailerror").style.color="red";
+          document.getElementById("emailid").style.border="1px solid red";
+          return false;
+        }
+        else{
+          document.getElementById("emailerror").innerHTML="Its a valid email :"+email;
+          document.getElementById("emailerror").style.color="green";
+          document.getElementById("emailid").style.border="1px solid green";
+          return true;
+        }
+      }
+      function mobValidate()
+        {
+        var number;
+        number=document.getElementById("mobileno").value;
+        var reg=/^\d{10}$/;
+
+        if(reg.test(mobileno.value) == false){
+          document.getElementById("mobnoerror").innerHTML="Its not a valid mobileno :"+number;
+          document.getElementById("mobnoerror").style.color="red";
+          document.getElementById("mobileno").style.border="1px solid red";
+          return false;
+        }
+        else{
+          document.getElementById("mobnoerror").innerHTML="Its a valid mobileno :"+number;
+          document.getElementById("mobnoerror").style.color="green";
+          document.getElementById("mobileno").style.border="1px solid green";
+          return true;
+        }      
+      }
+      function otpValidate()
+        {
+        var number;
+        number=document.getElementById("otp").value;
+  
+        if(number=="0000"||number==""){
+          document.getElementById("otperror").innerHTML="Its not a valid otp :"+"****";
+          document.getElementById("otperror").style.color="red";display="inline-block";position="fixed";
+          document.getElementById("otp").style.border="1px solid red";
+          return false;
+        }
+        else{
+          document.getElementById("otperror").innerHTML="Its a valid otp :"+"****";
+          document.getElementById("otperror").style.color="green";
+          document.getElementById("otp").style.border="1px solid green";
+          return true;
+        }
+      }
+  </script>
     </head>
     <body><p><b>Personal Details :</b></p><br><br>
         <form method="POST" action="Theatre-5(Paymenttype).html"  name="vform">
@@ -80,72 +147,6 @@
             <button onclick="return MakePayment()">Make Payment</button>
       </form>
 
-      <script>
-          function MakePayment()
-          {
-            if(emailValidate()&&mobValidate()&&otpValidate()){
-              return true;
-            }
-              else{
-                return false;
-              }
-          }
-          function emailValidate()
-            {
-            var email;
-            email=document.getElementById("emailid").value;
-            var reg=/^([a-zA-Z0-9_\-\.])+\@([a-zA-Z0-9_\-\.])+\.([a-zA-Z]{2,4})$/;
-      
-            if(reg.test(emailid.value) == false){
-              document.getElementById("emailerror").innerHTML="Its not a valid email :"+email;
-              document.getElementById("emailerror").style.color="red";
-              document.getElementById("emailid").style.border="1px solid red";
-              return false;
-            }
-            else{
-              document.getElementById("emailerror").innerHTML="Its a valid email :"+email;
-              document.getElementById("emailerror").style.color="green";
-              document.getElementById("emailid").style.border="1px solid green";
-              return true;
-            }
-          }
-          function mobValidate()
-            {
-            var number;
-            number=document.getElementById("mobileno").value;
-            var reg=/^\d{10}$/;
-    
-            if(reg.test(mobileno.value) == false){
-              document.getElementById("mobnoerror").innerHTML="Its not a valid mobileno :"+number;
-              document.getElementById("mobnoerror").style.color="red";
-              document.getElementById("mobileno").style.border="1px solid red";
-              return false;
-            }
-            else{
-              document.getElementById("mobnoerror").innerHTML="Its a valid mobileno :"+number;
-              document.getElementById("mobnoerror").style.color="green";
-              document.getElementById("mobileno").style.border="1px solid green";
-              return true;
-            }      
-          }
-          function otpValidate()
-            {
-            var number;
-            number=document.getElementById("otp").value;
-      
-            if(number=="0000"||number==""){
-              document.getElementById("otperror").innerHTML="Its not a valid otp :"+"****";
-              document.getElementById("otperror").style.color="red";display="inline-block";position="fixed";
-              document.getElementById("otp").style.border="1px solid red";
-              return false;
-            }
-            else{
-              document.getElementById("otperror").innerHTML="Its a valid otp :"+"****";
-              document.getElementById("otperror").style.color="green";
-              document.getElementById("otp").style.border="1px solid green";
-              return true;
-            }
-          }
-      </script>
+     
     </body>
 </html>
