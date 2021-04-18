@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <style>
+        body{
+          margin:0 auto;
+          text-align: center;
+          margin-top: 20px;
+          width:320px;
+          height: 320px;
+          background-color: white;
+          border:1px solid black;
+        }
+        h3{
+          color: crimson;
+          border: 1px solid black;
+          background-color: wheat;
+        }
+        button{
+         background-color: crimson;
+         color:wheat;
+         width:100px;
+         height:40px;
+         margin-top:-10px;
+        
+        }
+        button:hover{
+         background-color: rgb(200,30,30);
+         color: white;
+        }
+        #show{
+          border: 1px solid black;
+          padding: 5px;
+        }
+        #Button td input{
+          width: 100%;
+        }
+        table{
+          text-align: center;
+        }
+      </style>
+      <script>
+        function seatselection(){
+            if(takeData()){
+               return true;
+            }
+            else{
+              return false;
+            }
+        }
+       function takeData()
+       {
+          var n = document.getElementById("noofseats").value;
+          if(n==""){
+            document.getElementById("numberText").style.color="red";
+            document.getElementById("numberText").style.fontSize="15px";
+            document.getElementById("numberText").innerHTML = "please enter a numeric value";
+            return false;
+          }
+          else 
+          { 
+            document.getElementById("numberText").style.color="darkgreen";
+            document.getElementById("numberText").style.fontSize="18px";
+            document.getElementById("numberText").innerHTML="Number of selected\n seat is :"+n;
+            
+            var ticketprice=120*n;
+            var tax=(ticketprice*0.18);
+            var bookingcharges=n*30;
+            
+            document.getElementById("ticketprice").innerHTML="TicketPrice is (Rs) ="+ticketprice+"/-";
+            document.getElementById("tax").innerHTML="tax (18%) (Rs) ="+tax+"/-";
+            document.getElementById("bookingcharges").innerHTML="bookingcharges is (Rs) ="+bookingcharges+"/-";
+            
+            var Totalprice=ticketprice+tax+bookingcharges;
+
+            document.getElementById("Totalprice").innerHTML="TotalPrice is (Rs) ="+Totalprice+"/-";
+            document.getElementById("Totalprice").style.color="red";
+            document.getElementById("Totalprice").style.border="2px solid black";
+
+            return true;
+          }
+        }
+    </script>
+    </head>
+    <body>
+        <form method="GET" action="Theatre-3(Seat).html" name="form" >
+          <h3>Seat selection</h3>
+          <label for="Number of seats">Number of seats: </label>
+          <input type="number" name="seats"  id="noofseats" min="0" max="10" value="">
+          <input type="button" onclick="takeData()" id="btn" name="button" value="Next"><br><br>
+          <output id="numberText"></output><br><br>
+          <output id="ticketprice"></output><br>
+          <output id="tax"></output><br>
+          <output id="bookingcharges"></output><br><br>
+          <output id="Totalprice"></output><br><br>
+      <output id="price"></output>
+      <button onclick="return seatselection()">Select your seats</button>
+    </form>
+    </body>
+</html>
