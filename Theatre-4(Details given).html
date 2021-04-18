@@ -57,30 +57,8 @@
               width:55px;
               height:24px
             }
-          
     </style>
-    </head>
-    <body><p><b>Personal Details :</b></p><br><br>
-        <form method="POST" action="Theatre-5(Paymenttype).html"  name="vform">
-            <label for="Email">Email Id:
-                <input type="email" name="email" id="emailid" placeholder="enter your emailid" >
-                <input type="button" value="verify" onclick="emailValidate()" id="smallbtn">
-                <output id="emailerror"></output>
-            </label><br><br>
-            <label for="Mobileno">Mobile No:
-                <input type="text/number" name="mobile" id="mobileno" minlength="10" maxlength="10" placeholder="enter your mobile number">
-                <input type="button" value="verify" onclick="mobValidate()" id="smallbtn">
-                <output id="mobnoerror" class="val-error"></output>
-            </label><br><br>
-            <label for="OTP">OTP:
-                <input type="password" name="OTP" id="otp"  minlength="4" maxlength="8">
-                <input type="button" value="verify" onclick="otpValidate()" id="smallbtn">
-                <output id="otperror" class="val-error"></output>
-            </label><br><br>
-            <button onclick="return MakePayment()">Make Payment</button>
-      </form>
-
-      <script>
+        <script>
           function MakePayment()
           {
             if(emailValidate()&&mobValidate()&&otpValidate()){
@@ -147,5 +125,25 @@
             }
           }
       </script>
+    </head>
+    <body><p><b>Personal Details :</b></p><br><br>
+        <form method="POST" action="Theatre-5(Paymenttype).html"  name="vform">
+            <label for="Email">Email Id:
+                <input type="email" name="email" id="emailid" placeholder="enter your emailid" >
+                <input type="button" value="verify" onclick="emailValidate()" id="smallbtn">
+                <output id="emailerror"></output>
+            </label><br><br>
+            <label for="Mobileno">Mobile No:
+                <input type="text/number" name="mobile" id="mobileno" minlength="10" maxlength="10" placeholder="enter your mobile number">
+                <input type="button" value="verify" onclick="mobValidate()" id="smallbtn">
+                <output id="mobnoerror" class="val-error"></output>
+            </label><br><br>
+            <label for="OTP">OTP:
+                <input type="password" name="OTP" id="otp"  minlength="4" maxlength="8">
+                <input type="button" value="verify" onclick="otpValidate()" id="smallbtn">
+                <output id="otperror" class="val-error"></output>
+            </label><br><br>
+            <button onclick="return MakePayment()">Make Payment</button>
+      </form>
     </body>
 </html>
