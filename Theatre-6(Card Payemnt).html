@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+        body{
+         margin: 0 auto;
+         text-align: center;
+         width: 550px;
+         height: 570px;
+        }
+        #CreditDebitcard{
+         border: 1px solid black;
+         width: 100px;
+        }
+        #cardholdername{
+         margin-left: 30px;
+        }
+        #creditdebitcard{
+         margin-left: 5px;
+        }
+        #ccv{
+         margin-left:110px;
+        }
+        #otp{
+         margin-left: 40px;
+        }
+        #cardholdername,#creditdebitcard,#ccv,#otp,#user-id,#paswrd{
+         border:1px solid black;
+         width: 250px;
+         height: 20px;
+         outline: none;
+        }
+        input[type=button]{
+              width:70px;
+              height:25px;
+            }
+        #Proceed{
+              background-color: rgb(8,80,150);
+              color: white;
+              width:380px;
+              height:30px;
+              border:none;
+              outline:none;
+            }
+        #Proceed:hover{
+             background-color: rgb(1, 99, 160);
+             color: white;
+            }
+         h3{
+             font-size: larger;
+             font-style: italic;
+            }
+        #Proceed{
+             margin-top:-10px;
+            }
+        </style>
+
+    </head>
+    <body>
+        <form method="GET" action="Theatre8-end.html" name="myform">
+            <div for="CreditDebitCard">
+            <fieldset for="Credit/Debit Card Transaction">
+                <h3>Credit/Debit Card Transaction</h3>
+                <label for="Cardholder Name :">Cardholder Name :
+                <input type="text" name="Cardholder Name :" id="cardholdername" placeholder="Enter cardholder name" maxlength="25">
+                <input type="button" onclick="return namevalidate()" value="verify"><br>
+                </label><br><br>
+                <label for="Credit/Debitcard No :">Credit/Debit Card No :
+                <input type="text/number" name="Credit/Debit Card No :" id="creditdebitcard" placeholder="Enter 16digit number" minlength="16" maxlength="16">  
+                <input type="button" onclick="numbervalidate()"value="verify"><br>
+                </label><br><br>
+                <label for="CCV :">CCV :
+                <input type="text/number" name="CCV :" id="ccv" placeholder="Enter your ccv(3digit)" minlength="3" maxlength="3">
+                <input type="button" onclick="return ccvvalidate()"value="verify"><br>
+                </label><br><br>
+                <label for="OTP :">OTP :
+                <input type="password" name="OTP :" id="otp" minlength="4" maxlength="8"> 
+                <input type="button" onclick="return otpvalidate()"value="verify"><br>         
+                </label><br><br>
+                <button onclick="return proceed()" id="Proceed">Proceed</button>
+            </fieldset>
+            </div>   
+        </form>
+        <script>         
+            function namevalidate()
+            {
+            var name=document.myform.cardholdername.value;
+            if(name==null||name=="")
+            {
+                alert("Name is not entered");
+                return false;
+            }
+             else
+             {
+                 alert("Name is entered");
+                 return true;
+             }
+            }
+            function numbervalidate()
+            {
+            var cardnumber=document.myform.creditdebitcard.value;
+            if(cardnumber==""||cardnumber==null)
+            {
+                alert("Number is not entered");
+                return false;
+            }
+             else
+             {
+                 alert("Number is entered successfully");
+                 return true;
+             }
+            }
+    
+            function ccvvalidate()
+            {
+            var ccv=document.myform.ccv.value;
+            if(ccv==""||ccv==null)
+            {
+             alert("ccv is not entered");
+             return false;
+            }
+            else{
+                alert("ccv is entered");
+                return true;
+            }
+            }
+            
+            function otpvalidate()
+            {
+            var otp=document.myform.otp.value;
+            if(otp==""||otp==null)
+            {
+             alert("otp is not entered");
+             return false;
+            }
+            else{
+                alert("otp is entered");
+                return true;
+            }
+            }
+
+            function proceed()
+            {
+                if(namevalidate()&&numbervalidate()&&ccvvalidate()&&otpvalidate())
+                {
+                      alert("Your details are entered successfully");
+                      return true;
+                }
+                else
+                {
+                    alert("Enter your details not correctly");
+                    return false;
+                }
+            }
+        </script>
+    </body>
+</html>
