@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+            body{
+             margin: 0 auto;
+             text-align: center;
+             border: 1px solid black;
+             width: 400px;
+             height: 400px;
+             }
+            #emailid{
+             margin-left:15px;
+            }
+            #mobno{
+             margin-left: 10px;
+            }
+            #otp{
+             margin-left: 40px;
+            } 
+            #emailid,#mobileno,#otp{
+            border:1px solid black;
+            width: 250px;
+            height: 20px;
+            outline: none;
+            }
+            button{
+              background-color: rgb(8,80,150);
+              color: white;
+              width:380px;
+              height:30px;
+              border:none;
+              outline: none;
+              margin-top: 30px;
+              display:inline-block;
+              position: relative;
+            }
+             button:hover{
+             background-color: rgb(1, 99, 160);
+             color: white;
+            }
+            p{
+                font-size: larger;
+                font-style: italic;
+                margin-bottom: 10px;
+            }
+            output{
+                display:block;
+                position:relative;
+            }
+            br{
+              display: block;
+            }
+            #smallbtn{
+              width:55px;
+              height:24px
+            }
+          
+    </style>
+    </head>
+    <body><p><b>Personal Details :</b></p><br><br>
+        <form method="POST" action="Theatre-5(Paymenttype).html"  name="vform">
+            <label for="Email">Email Id:
+                <input type="email" name="email" id="emailid" placeholder="enter your emailid" >
+                <input type="button" value="verify" onclick="emailValidate()" id="smallbtn">
+                <output id="emailerror"></output>
+            </label><br><br>
+            <label for="Mobileno">Mobile No:
+                <input type="text/number" name="mobile" id="mobileno" minlength="10" maxlength="10" placeholder="enter your mobile number">
+                <input type="button" value="verify" onclick="mobValidate()" id="smallbtn">
+                <output id="mobnoerror" class="val-error"></output>
+            </label><br><br>
+            <label for="OTP">OTP:
+                <input type="password" name="OTP" id="otp"  minlength="4" maxlength="8">
+                <input type="button" value="verify" onclick="otpValidate()" id="smallbtn">
+                <output id="otperror" class="val-error"></output>
+            </label><br><br>
+            <button onclick="return MakePayment()">Make Payment</button>
+      </form>
+
+      <script>
+          function MakePayment()
+          {
+            if(emailValidate()&&mobValidate()&&otpValidate()){
+              return true;
+            }
+              else{
+                return false;
+              }
+          }
+          function emailValidate()
+            {
+            var email;
+            email=document.getElementById("emailid").value;
+            var reg=/^([a-zA-Z0-9_\-\.])+\@([a-zA-Z0-9_\-\.])+\.([a-zA-Z]{2,4})$/;
+      
+            if(reg.test(emailid.value) == false){
+              document.getElementById("emailerror").innerHTML="Its not a valid email :"+email;
+              document.getElementById("emailerror").style.color="red";
+              document.getElementById("emailid").style.border="1px solid red";
+              return false;
+            }
+            else{
+              document.getElementById("emailerror").innerHTML="Its a valid email :"+email;
+              document.getElementById("emailerror").style.color="green";
+              document.getElementById("emailid").style.border="1px solid green";
+              return true;
+            }
+          }
+          function mobValidate()
+            {
+            var number;
+            number=document.getElementById("mobileno").value;
+            var reg=/^\d{10}$/;
+    
+            if(reg.test(mobileno.value) == false){
+              document.getElementById("mobnoerror").innerHTML="Its not a valid mobileno :"+number;
+              document.getElementById("mobnoerror").style.color="red";
+              document.getElementById("mobileno").style.border="1px solid red";
+              return false;
+            }
+            else{
+              document.getElementById("mobnoerror").innerHTML="Its a valid mobileno :"+number;
+              document.getElementById("mobnoerror").style.color="green";
+              document.getElementById("mobileno").style.border="1px solid green";
+              return true;
+            }      
+          }
+          function otpValidate()
+            {
+            var number;
+            number=document.getElementById("otp").value;
+      
+            if(number=="0000"||number==""){
+              document.getElementById("otperror").innerHTML="Its not a valid otp :"+"****";
+              document.getElementById("otperror").style.color="red";display="inline-block";position="fixed";
+              document.getElementById("otp").style.border="1px solid red";
+              return false;
+            }
+            else{
+              document.getElementById("otperror").innerHTML="Its a valid otp :"+"****";
+              document.getElementById("otperror").style.color="green";
+              document.getElementById("otp").style.border="1px solid green";
+              return true;
+            }
+          }
+      </script>
+    </body>
+</html>
