@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+         body{
+         margin: 0 auto;
+         text-align: center;
+         width: 450px;
+         height: 570px;
+        }
+         #Netbanking{
+         border: 1px solid black;
+         width: 100px;
+        }
+        #user-id{
+         margin-left: 85px;
+        }
+        #paswrd{
+         margin-left: 70px;
+        }
+        #select0{
+         border:1px solid black;
+         width: 255px;
+         height: 28px;
+         margin-left: 28px;
+        outline: none;
+        }
+        #user-id,#paswrd{
+         border:1px solid black;
+         width: 250px;
+         height: 20px;
+         outline: none;
+        }
+        button,#Proceed{
+              background-color: rgb(8,80,150);
+              color: white;
+              width:380px;
+              height:30px;
+              border:none;
+            }
+        button:hover{
+             background-color: rgb(1, 99, 160);
+             color: white;
+            }
+        h3{
+                font-size: larger;
+                font-style: italic;
+            }
+            #Proceed{
+                margin-top:-10px;
+            }
+    </style>
+    </head>
+    <body>
+    <form method="GET" action="Theatre8-end.html">
+        <div for="Netbanking">
+            <fieldset for="Netbanking">
+            <h3>Netbanking</h3>
+            <label for="Select your bank">Select your bank :</label>
+            <select id="select0">
+                <option value="select"selected>Select</option>
+                <option value="Bank-1">Bank-1</option>
+                <option value="Bank-2">Bank-2</option>
+                <option value="Bank-3">Bank-3</option>
+            </select><br><br>
+            <label for="User Id :">User Id :
+            <input type="text/number" name="User Id:" id="user-id" maxlength="25" required>
+            </label><br><br>
+            <label for="Password :">Password :
+            <input type="password" name="Password :" id="paswrd" minlength="8" maxlength="16" required>         
+            </label><br><br>
+            <button for="Proceed">Proceed</button>
+        </fieldset>
+        </div>
+    </form>
+</body>
+</html>
